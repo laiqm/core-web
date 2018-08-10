@@ -1,5 +1,5 @@
 import { ButtonModule, TooltipModule } from 'primeng/primeng';
-import { HotkeysService } from 'angular2-hotkeys';
+// import { HotkeysService } from 'angular2-hotkeys';
 import { ContentTypeFieldsAddRowComponent } from './content-type-fields-add-row.component';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -8,6 +8,6 @@ import { NgModule } from '@angular/core';
     declarations: [ContentTypeFieldsAddRowComponent],
     exports: [ContentTypeFieldsAddRowComponent],
     imports: [CommonModule, ButtonModule, TooltipModule],
-    providers: [HotkeysService]
+    // providers: [HotkeysService]
 })
 export class ContentTypeFieldsAddRowModule {}

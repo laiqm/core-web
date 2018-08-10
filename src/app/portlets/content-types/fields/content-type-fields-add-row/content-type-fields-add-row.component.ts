@@ -1,5 +1,5 @@
 import { Component, OnDestroy, Input, Output, EventEmitter, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { HotkeysService, Hotkey } from 'angular2-hotkeys';
+// import { HotkeysService, Hotkey } from 'angular2-hotkeys';
 import { DotMessageService } from '../../../../api/services/dot-messages-service';
 
 /**
@@ -31,7 +31,10 @@ export class ContentTypeFieldsAddRowComponent implements OnDestroy, OnInit {
     @Output() selectColums: EventEmitter<number> = new EventEmitter<number>();
     @ViewChild('colContainer') colContainerElem: ElementRef;
 
-    constructor(private hotkeysService: HotkeysService, public dotMessageService: DotMessageService) {}
+    constructor(
+        // private hotkeysService: HotkeysService,
+        public dotMessageService: DotMessageService
+    ) {}
 
     ngOnInit(): void {
         this.setKeyboardEvent('ctrl+a', this.setColumnSelect.bind(this));
@@ -115,12 +118,12 @@ export class ContentTypeFieldsAddRowComponent implements OnDestroy, OnInit {
      * @memberof ContentTypeFieldsAddRowComponent
      */
     setKeyboardEvent(key: string | string[], keyEvent): any {
-        this.hotkeysService.add(
-            new Hotkey(key, (_event: KeyboardEvent): boolean => {
-                keyEvent();
-                return false;
-            })
-        );
+        // this.hotkeysService.add(
+        //     new Hotkey(key, (_event: KeyboardEvent): boolean => {
+        //         keyEvent();
+        //         return false;
+        //     })
+        // );
     }
 
     /**
@@ -189,6 +192,6 @@ export class ContentTypeFieldsAddRowComponent implements OnDestroy, OnInit {
     }
 
     private removeHotKeys(): void {
-        this.hotkeysService.remove(this.hotkeysService.get(['left', 'right', 'enter', 'esc']));
+        // this.hotkeysService.remove(this.hotkeysService.get(['left', 'right', 'enter', 'esc']));
     }
 }

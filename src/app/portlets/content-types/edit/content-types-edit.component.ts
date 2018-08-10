@@ -12,7 +12,7 @@ import { ContentTypesInfoService } from '../../../api/services/content-types-inf
 import { DotRouterService } from '../../../api/services/dot-router/dot-router.service';
 import { DotHttpErrorManagerService, DotHttpErrorHandled } from '../../../api/services/dot-http-error-manager/dot-http-error-manager.service';
 import { ResponseView } from 'dotcms-js/dotcms-js';
-import { HotkeysService, Hotkey } from 'angular2-hotkeys';
+// import { HotkeysService, Hotkey } from 'angular2-hotkeys';
 
 /**
  * Portlet component for edit content types
@@ -43,7 +43,7 @@ export class ContentTypesEditComponent implements OnInit {
         private dotHttpErrorManagerService: DotHttpErrorManagerService,
         private dotRouterService: DotRouterService,
         private fieldService: FieldService,
-        private hotkeysService: HotkeysService,
+        // private hotkeysService: HotkeysService,
         private location: Location,
         private route: ActivatedRoute,
         public dotMessageService: DotMessageService,
@@ -167,12 +167,12 @@ export class ContentTypesEditComponent implements OnInit {
     }
 
     private bindEscKey(): void {
-        this.hotkeysService.add(
-            new Hotkey('esc', (_event: KeyboardEvent): boolean => {
-                this.cancelForm();
-                return false;
-            })
-        );
+        // this.hotkeysService.add(
+        //     new Hotkey('esc', (_event: KeyboardEvent): boolean => {
+        //         this.cancelForm();
+        //         return false;
+        //     })
+        // );
     }
 
     private createContentType(value: ContentType): void {
